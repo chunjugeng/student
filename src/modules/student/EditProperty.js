@@ -8,31 +8,24 @@ import EditRoomInfo from './EditRoomInfo';
 @inject('editProperty')
 @observer
 export default class EditProperty extends React.Component {
-    
-    changeProperty=(e)=> {
-        this.props.editProperty.changeProperty(e);
-    }
-
-    addProperty=()=> {
-        this.setState({currIndex: null})
-    }
     render() {
         let store = this.props.editProperty;
         let {propertyData, currRoom, currIndex, isShowNewProerty} = this.props.editProperty.app;
         return(
             <div className="property edit-property">
-                <h1>Edit Properties <span className="add-new-property-btn" onClick={store.addProperty}>Add new property</span></h1>
+                <h1>Edit Properties<span className="add-new-property-btn" onClick={store.addProperty}>Add new property</span></h1>
                 <div className="content">
                     <div className="room-list">
                         <ul>
-                            {propertyData.map((d, i)=>(
-                                <li key={i} className={cn({active: i == currIndex})} onClick={this.changeProperty} data-index={i} data-id={d._id}>
+                            {propertyData && propertyData.map((d, i)=>(
+                                <li key={i} className={cn({active: i == currIndex})} onClick={store.changeProperty} data-index={i} data-id={d._id}>
                                     {d.property}
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    { !isShowNewProerty ?
+
+                    {!isShowNewProerty ?
                         <div className="room-detail">
                             <h5>Price</h5>
                             <table>
@@ -44,10 +37,10 @@ export default class EditProperty extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {currRoom.list.map((v, i)=>(
-                                        <tr key={i}>
-                                            <td >{v.name}</td>
-                                            <td >£{v.price}</td>
+                                    {currRoom && currRoom.list.map((v, k)=>(
+                                        <tr key={k}>
+                                            <td>{v.name}</td>
+                                            <td>£{v.price}</td>
                                             <td className="edit">Edit</td>
                                         </tr>
                                     ))}

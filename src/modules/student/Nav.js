@@ -5,7 +5,7 @@ const Nav=({label, to, onlyExact=false}) => (
 		path={to}
 		exact={onlyExact}
 		children={({match}) => (
-            <Link to={to} className={ match && __client__? 'active': ''}>
+            <Link to={to} >
                 {label}
             </Link>
 		)}

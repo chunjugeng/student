@@ -8,8 +8,8 @@ export default class Property {
 
     @action
     initData =() => {
-        let groups = [];
         data.map((d)=> {
+            let groups = [];
             let len = d.list.length;
             if (len >0 && len > 2) {
                 let columnCount = Math.ceil(len/2);
@@ -18,8 +18,12 @@ export default class Property {
                 }
                 d.list = groups;
             }
+            if (len==1) {
+                groups[0] = d.list.slice(0, 1);
+                d.list = groups;
+            }
             runInAction(()=> {
-                this.app.propertyData = data;
+                this.app.property = data;
             })
         });
     }

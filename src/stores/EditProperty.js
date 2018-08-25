@@ -1,6 +1,6 @@
 import {runInAction, action, observable, computed} from 'mobx';
 import data from '~/modules/student/propertyList.json';
-export default class Property {
+export default class EditProperty {
     @observable
     app = {
         propertyData: data,
@@ -10,15 +10,14 @@ export default class Property {
         price: ''
     }
 
-
     @action
     changeProperty=(e)=> {
         let currIndex = e.target.getAttribute('data-index');
         let _id = e.target.getAttribute('data-id');
         runInAction(()=> {
             this.app.isShowNewProerty = false;
-            data.map(d => {
-                if (_id === d._id) {
+           return data.map(d => {
+                if (_id == d._id) {
                     this.app.currIndex= currIndex;
                     this.app.currRoom = d;
                 }
@@ -44,7 +43,6 @@ export default class Property {
                         });
                     }
                 });
-                
             }
         });
     }

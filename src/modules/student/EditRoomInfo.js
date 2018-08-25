@@ -28,6 +28,7 @@ export default class EditRoomInfo extends React.Component {
         }, false);
     }
 
+
     render() {
         let store = this.props.editProperty;
         let {roomName, price} = this.props.editProperty.app;
@@ -37,7 +38,7 @@ export default class EditRoomInfo extends React.Component {
                     <input type="text" name="roomName" placeholder="Room Name" value={roomName} onChange={store.onChange}/>
                     <span className="price">
                         <input type="tel" name="price" placeholder="Price" value={price} onChange={store.onChange}/>
-                        <i onClick={this.showHint} ref={hint=> this.hint=hint}></i>
+                        <i onClick={this.showHint} ref={hint=> this.hint=hint}>?</i>
                         <ul className={cn('hide', {show: this.state.isShowHint})}>
                             <li>GBP</li>
                             <li>USD</li>

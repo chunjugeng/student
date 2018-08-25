@@ -44,13 +44,13 @@ module.exports = {
                 }
             },
             {
-				test: /\.(png|jpg|gif|jpeg|svg)$/,
-				use: {
-					loader: 'file-loader',
-					options: {
-						name: './images/[name].[ext]'
-					}
-				}
+                test: /\.(png|jpg|jpeg|bmp|jif|svg|mp3|mp4)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'images/[name].[ext]'
+                    }
+                }]
             },
             {
                 test: /\.svg/, 

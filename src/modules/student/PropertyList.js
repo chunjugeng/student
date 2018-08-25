@@ -1,11 +1,13 @@
 
-import propertyData from './propertyList.json';
+import data from './propertyList.json';
+import {inject, observer}from 'mobx-react';
 
+@inject('property')
+@observer
 export default class PropertyList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            property: [],
             isApp: false
         };
     }
@@ -15,35 +17,17 @@ export default class PropertyList extends React.Component {
         if (screenW <= 768) {
             this.setState({isApp: true});
         } else {
-            this.initData();
+            this.props.property.initData();
         }
     }
 
-    initData =()=> {
-        propertyData.map((d)=> {
-            let groups = [];
-            let len = d.list.length;
-            if (len >0 && len > 2) {
-                let columnCount = Math.ceil(len/2);
-                for(let i = 0; i < columnCount; i++) {
-                    groups[i] = d.list.slice(columnCount * i, columnCount * (i + 1));
-                }
-                d.list = groups;
-            }
-            if (len==1) {
-                groups[0] = d.list.slice(0, 1);
-                d.list = groups;
-            }
-        });
-        this.setState({property: propertyData});
-    }
-
     render() {
-        let {property, isApp} = this.state;
+        let {isApp} = this.state;
+        let {property} = this.props.property.app;
         return(
             <div className="property property-list">
                 <h1>Property List</h1>
-                {!isApp && property.length > 0 && property.map((d, i)=> (
+                {!isApp && property && property.map((d, i)=> (
                     <div className="table" key={i}>
                         <h5>{d.property}</h5>
                         {d.list.length > 0 && d.list.map((l, j)=> (
@@ -67,7 +51,7 @@ export default class PropertyList extends React.Component {
                     </div>
                 ))}
 
-                {isApp && propertyData.map((d, i)=> (
+                {isApp && data.map((d, i)=> (
                     <div className="table" key={i}>
                         <h5>{d.property}</h5>
                         <table>

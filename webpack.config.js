@@ -49,6 +49,7 @@ let webpackConfig = {
         chunkFilename: '[name].js',
         filename: '[name].js'
     },
+    devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
@@ -101,7 +102,7 @@ let webpackConfig = {
 				use: {
 					loader: 'url-loader',
 					options: {
-						limit:  1,
+						limit: 1,
 						name: './images/[name].[ext]'
 					}
 				}
