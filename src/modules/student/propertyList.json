@@ -1,0 +1,52 @@
+[
+    {
+        "property": "Property1",
+        "_id": "Property1",
+        "list": [
+            {
+                "name": "Room1",
+                "price": "250"
+            },
+            {
+                "name": "Room2",
+                "price": "250"
+            },
+            {
+                "name": "Room3",
+                "price": "250"
+            }
+        ]
+    },
+    {
+        "property": "Property2",
+        "_id": "Property2",
+        "list": [
+            {
+                "name": "Room1",
+                "price": "250"
+            }
+        ]
+    },
+    {
+        "property": "Property3",
+        "_id": "Property3",
+        "list": [
+            {
+                "name": "Room1",
+                "price": "150"
+            },
+            {
+                "name": "Room2",
+                "price": "50"
+            },
+            {
+                "name": "Room3",
+                "price": "20"
+            },
+            {
+                "name": "Room4",
+                "price": "20"
+            }
+        ]
+    }
+]

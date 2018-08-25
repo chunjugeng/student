@@ -1,0 +1,26 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 20px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+    text-decoration: none;
+}
+ul, ol, li {
+    list-style: none;
+}
+img {
+    border: 0;
+}
+
+.boxCon {
+    padding: 1.5rem 0.75rem;
+    border-radius: 0.15rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem #c3c2c2;
+    box-sizing: border-box;
+}
