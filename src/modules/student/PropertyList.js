@@ -11,7 +11,9 @@ export default class PropertyList extends React.Component {
             isApp: false
         };
     }
-
+    componentWillMount() {
+        this.props.property.initData();
+    }
     componentDidMount() {
         let screenW = window.innerWidth;
         if (screenW <= 768) {

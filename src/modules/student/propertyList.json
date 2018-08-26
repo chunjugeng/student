@@ -6,14 +6,6 @@
             {
                 "name": "Room1",
                 "price": "250"
-            },
-            {
-                "name": "Room2",
-                "price": "250"
-            },
-            {
-                "name": "Room3",
-                "price": "250"
             }
         ]
     },
@@ -23,6 +15,10 @@
         "list": [
             {
                 "name": "Room1",
+                "price": "250"
+            },
+            {
+                "name": "Room2",
                 "price": "250"
             }
         ]
@@ -41,10 +37,6 @@
             },
             {
                 "name": "Room3",
-                "price": "20"
-            },
-            {
-                "name": "Room4",
                 "price": "20"
             }
         ]

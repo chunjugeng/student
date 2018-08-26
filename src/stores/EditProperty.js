@@ -1,6 +1,6 @@
 import {runInAction, action, observable, computed} from 'mobx';
 import data from '~/modules/student/propertyList.json';
-export default class EditProperty {
+export default new class EditProperty {
     @observable
     app = {
         propertyData: data,

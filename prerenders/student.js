@@ -7,9 +7,8 @@ import EditPropertyStore from '~/stores/EditProperty';
 import ejsRender from './ejs-render';
 
 function render(currMod, cf) {
-    let app = Object.create(null);
     cf.html = renderToString(
-        <Provider property={new PropertyStore(app)} editProperty={new EditPropertyStore(app)}>
+        <Provider property={PropertyStore} edit={EditPropertyStore}>
             <App />
         </Provider>
     );

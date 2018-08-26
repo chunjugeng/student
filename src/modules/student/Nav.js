@@ -1,14 +1,7 @@
-import {Route, Link} from 'react-router-dom';
-import cn from 'classnames';
+import {Route, NavLink as Link} from 'react-router-dom';
 const Nav=({label, to, onlyExact=false}) => (
-	<Route
-		path={to}
-		exact={onlyExact}
-		children={({match}) => (
-            <Link to={to} >
-                {label}
-            </Link>
-		)}
-	/>
+	<Link to={to} activeClassName="active" exact={onlyExact} >
+		{label}
+	</Link>
 );
 export default Nav;

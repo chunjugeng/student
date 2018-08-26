@@ -5,12 +5,12 @@ import {inject, observer}from 'mobx-react';
 import cn from 'classnames';
 import EditRoomInfo from './EditRoomInfo';
 
-@inject('editProperty')
+@inject('edit')
 @observer
 export default class EditProperty extends React.Component {
     render() {
-        let store = this.props.editProperty;
-        let {propertyData, currRoom, currIndex, isShowNewProerty} = this.props.editProperty.app;
+        let store = this.props.edit;
+        let {propertyData, currRoom, currIndex, isShowNewProerty} = this.props.edit.app;
         return(
             <div className="property edit-property">
                 <h1>Edit Properties<span className="add-new-property-btn" onClick={store.addProperty}>Add new property</span></h1>
